@@ -14,9 +14,10 @@ while cap.isOpened():
     if not ret:
         break
 
-    # グレースケールに変換
+    # ぼかし処理
     blurred = cv2.GaussianBlur(frame, (15, 15), 0)
     out.write(blurred)
 
 cap.release()
 out.release()
+
