@@ -7,7 +7,7 @@ height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
 
 # コーデックと出力設定（カラー=False でモノクロ動画として保存）
 fourcc = cv2.VideoWriter_fourcc(*'mp4v')
-out = cv2.VideoWriter('output_gray.mp4', fourcc, fps, (width, height), isColor=False)
+out = cv2.VideoWriter('output_gray_video.mp4', fourcc, fps, (width, height), isColor=False)
 
 while cap.isOpened():
     ret, frame = cap.read()
@@ -20,3 +20,4 @@ while cap.isOpened():
 
 cap.release()
 out.release()
+
