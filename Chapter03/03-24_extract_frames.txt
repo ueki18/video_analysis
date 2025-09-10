@@ -1,0 +1,1 @@
+ffmpeg -i input.mp4 -vf fps=1 output/frame_%03d.jpg
