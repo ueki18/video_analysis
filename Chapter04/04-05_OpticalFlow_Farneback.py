@@ -21,13 +21,20 @@ while cap.isOpened():
     # Farneback法でオプティカルフローを計算
     flow = cv2.calcOpticalFlowFarneback(
         prev_gray, curr_gray, None,
-        pyr_scale=0.5,    # ピラミッドスケール（各レベルで画像を縮小する比率）
-        levels=3,         # ピラミッドレベル数（多いほど大きな動きに対応）
-        winsize=15,       # ウィンドウサイズ（大きいほど滑らか、小さいほど細部に敏感）
-        iterations=3,     # 各レベルでの反復回数
-        poly_n=5,         # 多項式近似の近傍サイズ
-        poly_sigma=1.2,   # 多項式近似に用いるガウシアンのσ
-        flags=0           # オプションフラグ（通常は0）
+        # ピラミッドスケール（各レベルで画像を縮小する比率）
+        pyr_scale=0.5,
+        # ピラミッドレベル数（多いほど大きな動きに対応）
+        levels=3,
+        # ウィンドウサイズ（大きいほど滑らか，小さいほど細部に敏感）
+        winsize=15,
+        # 各レベルでの反復回数
+        iterations=3,
+        # 多項式近傍サイズ
+        poly_n=5,
+        # 多項式近似に用いるガウシアンのσ
+        poly_sigma=1.2,
+        # オプションフラグ（通常は0）
+        flags=0
     )
 
     # 動きベクトルを極座標に変換
@@ -48,4 +55,5 @@ while cap.isOpened():
 
 cap.release()
 cv2.destroyAllWindows()
+
 
