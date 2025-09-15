@@ -18,7 +18,7 @@ while cap.isOpened():
 
     curr_gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
-    # Farnebäck法でオプティカルフローを計算
+    # Farneback法でオプティカルフローを計算
     flow = cv2.calcOpticalFlowFarneback(
         prev_gray, curr_gray, None,
         pyr_scale=0.5,    # ピラミッドスケール（各レベルで画像を縮小する比率）
@@ -48,3 +48,4 @@ while cap.isOpened():
 
 cap.release()
 cv2.destroyAllWindows()
+
