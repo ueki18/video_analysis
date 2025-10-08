@@ -51,9 +51,10 @@ while cap.isOpened():
     if cv2.waitKey(20) & 0xFF == ord('q'):
         break
 
-    prev_gray = curr_gray
+    prev_gray = curr_gray.copy()
 
 cap.release()
 cv2.destroyAllWindows()
+
 
 
