@@ -17,9 +17,13 @@ text_clips = [
         font_size=50,
         color=color,
         font=font_path
-    ).with_position("center").with_start(start).with_duration(end - start)
+    )
+    .with_position("center")
+    .with_start(start)
+    .with_duration(end - start)
     for (msg, start, end, color) in schedule
 ]
 
 video = CompositeVideoClip([clip, *text_clips])
 video.write_videofile("output_switch_text_multi.mp4")
+
