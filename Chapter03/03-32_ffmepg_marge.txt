@@ -1,1 +1,0 @@
-ffmpeg -f concat -safe 0 -i list.txt -c copy output_ffmpeg_merged.mp4
