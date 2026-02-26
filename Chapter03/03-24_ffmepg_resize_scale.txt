@@ -1,1 +1,0 @@
-ffmpeg -i input.mp4 -vf scale=640:-1 -c:a copy output_resized_scale.mp4
