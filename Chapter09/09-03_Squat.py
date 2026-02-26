@@ -37,14 +37,16 @@ while cap.isOpened():
         hip = max(hips, key=lambda p: p.visibility)
         knee = max(knees, key=lambda p: p.visibility)
 
+        # MediaPipeのy座標は下向きが正（上が0、下が1）
+        # 直立時は差が大きく、しゃがむと差が小さくなる
         diff = knee.y - hip.y  # 膝の高さ − 腰の高さ
 
         if hip.visibility > 0.5 and knee.visibility > 0.5:
-            # しゃがんだとき（腰が下がると diff が小さくなる）
+            # しゃがみ判定（腰が下がって膝とのy座標差が縮まったとき）
             if state == 'up' and diff < threshold_down:
                 state = 'down'
 
-            # 立ち上がったとき（腰が上がると diff が大きくなる）
+            # 立ち上がり判定（腰が上がって膝とのy座標差が広がったとき）
             elif state == 'down' and diff > threshold_up:
                 count += 1
                 state = 'up'
