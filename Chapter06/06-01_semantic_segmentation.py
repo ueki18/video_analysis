@@ -5,7 +5,8 @@ from PIL import Image
 import numpy as np
 
 # モデルの読み込み
-model = models.segmentation.deeplabv3_resnet101(pretrained=True).eval()
+weights = models.segmentation.DeepLabV3_ResNet101_Weights.DEFAULT
+model = models.segmentation.deeplabv3_resnet101(weights=weights).eval()
 
 # 入力画像の読み込みと前処理
 img = Image.open('input.png')
