@@ -1,5 +1,7 @@
 from transformers import AutoProcessor, AutoModelForVideoClassification
-import torch, av, numpy as np
+import torch
+import av
+import numpy as np
 
 VIDEO_PATH = "ice_skating.mp4"
 MODEL_ID = "MCG-NJU/videomae-base-finetuned-kinetics"
@@ -29,3 +31,4 @@ print("Top predictions:")
 for score, idx in zip(topk.values, topk.indices):
     label = model.config.id2label[idx.item()]
     print(f"{label:30s}  score={score.item():.4f}")
+
