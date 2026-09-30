@@ -4,6 +4,10 @@
 **『Pythonで学ぶ動画解析 実践入門 ― OpenCV・YOLO・CLIP・動画生成まで ―』**  
 （植木 一也 著，科学情報出版，2026年）のサンプルプログラムを公開しています．
 
+<p align="center">
+  <img src="images/book_video_analysis.jpg" width="250">
+</p>
+
 PythonとOpenCVを用いた動画解析の基礎から，物体検出・追跡，行動認識，
 マルチモーダルAI，動画生成まで，本書で扱う内容を実際に動かしながら学ぶことができます．
 
